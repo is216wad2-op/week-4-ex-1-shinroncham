@@ -36,8 +36,13 @@
                 if (pw.length == 0) {
                     err_msg += "Password must not be empty\n";
                 }
-                console.log(err_msg);
-            }
+                if (err_msg != "") {
+                    alert (msg);
+                    return false;
+                } else {
+                    return true;
+                }
+            } 
      
          </script>
 </body>
