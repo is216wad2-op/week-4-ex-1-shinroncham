@@ -19,8 +19,24 @@
         <script>
         
             function validateForm() {
-                var x = document.getElementsByName("id");
-                console.log(x);
+                var err_msg = "localhost says\n\n";
+                var x = document.getElementsByName("id")[0].value;
+                if (x.length >10) {
+                    err_msg += "ID can only have max length of 10 char\n";
+                }
+                var y = document.getElementsByName("age")[0].value;
+                if (y<10 || y >40) {
+                    err_msg += "Age must be between 10 and 40\n";
+                }
+                var z = document.getElementsByName("email")[0].value;
+                if (!(z.includes("@"))) {
+                    err_msg += "Email must contain '@'\n";
+                }
+                var pw = document.getElementsByName("password")[0].value;
+                if (pw.length == 0) {
+                    err_msg += "Password must not be empty\n";
+                }
+                alert(err_msg);
             }
      
          </script>
