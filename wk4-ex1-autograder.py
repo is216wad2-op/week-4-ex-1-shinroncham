@@ -6,7 +6,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.alert import Alert
-from selenium.webdriver.support import expected_conditions as EC
 
 # Define test cases: each is a dict of form input values and the expected alert (if any)
 test_cases = [
@@ -39,7 +38,7 @@ pass_count = 0
 
 for idx, case in enumerate(test_cases, start=1):
     # Reset the form before each test
-    reset_button = wait.until(EC.presence_of_element_located((By.NAME, "reset")))
+    reset_button = driver.find_element(By.NAME, "reset")
     reset_button.click()
     time.sleep(0.2) # Give time for the form to reset
 
