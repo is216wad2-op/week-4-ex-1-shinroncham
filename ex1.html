@@ -22,7 +22,7 @@
                 var err_msg = "localhost says\n\n";
                 var x = document.getElementsByName("id")[0].value;
                 if (x.length >10) {
-                    err_msg += "ID can only have max length of 10 char\n";
+                    err_msg += "ID must not contain more than 10 characters\n";
                 }
                 var y = document.getElementsByName("age")[0].value;
                 if (y<10 || y >40) {
